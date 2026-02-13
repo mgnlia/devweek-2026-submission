@@ -4,12 +4,11 @@ In production, these query actual on-chain accounts via Solana RPC.
 For the hackathon demo, includes both real RPC calls and fallback demo data.
 """
 
-import os
 from typing import Any
 
 import httpx
 
-from server import Position, RiskLevel
+from models import Position, RiskLevel
 
 
 # ---------------------------------------------------------------------------
