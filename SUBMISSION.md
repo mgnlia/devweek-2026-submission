@@ -1,136 +1,141 @@
-# DeveloperWeek 2026 — Complete Submission Package
+# DeveloperWeek 2026 — Final Submission Package (SolShield)
 
-## 📋 Submission Checklist
+## ✅ Final Status: **READY TO SUBMIT**
 
-### Required Items
-- [x] **Devpost Registration** — Team registered on DeveloperWeek 2026 Hackathon Devpost
-- [x] **Eventbrite Registration** — All team members registered on Eventbrite
-- [x] **GitHub Repository** — Public repo: https://github.com/mgnlia/devweek-2026-submission
-- [x] **Project Write-up** — 200-400 word description (see below)
-- [x] **Screenshots** — Architecture diagram + UI screenshots (see `/assets/`)
-- [x] **Demo Video Script** — 3-minute video plan (see below)
-- [x] **Challenge Selection** — Primary: Kilo "For Devs, By Devs" ($4K pool)
-
-### ⚠️ BLOCKING: Pre-Submission Rebrand
-- [ ] Remove "HackMoney 2026" from `liquidation-agent-frontend` README
-- [ ] Remove "Colosseum Agent Hackathon" from `colosseum-agent-hackathon` README
-- [ ] All repos reference "DeveloperWeek 2026" consistently
-- [ ] Frontend title/header updated to "SolShield — DeveloperWeek 2026"
+**Deadline:** Feb 20, 2026 @ 10:00am PST  
+**Primary Track:** Kilo "For Devs, By Devs"  
+**Secondary Track:** Kilo "Finally Ship It"
 
 ---
 
-## 📝 Devpost Write-up (372 words)
+## 1) Final Repository Branding Status
+
+### A. Primary submission repo
+- ✅ Repo: https://github.com/mgnlia/devweek-2026-submission
+- ✅ README title and copy fully DeveloperWeek 2026 aligned
+- ✅ Package metadata aligned (`pyproject.toml` description)
+
+### B. Frontend repo
+- ✅ Repo: https://github.com/mgnlia/liquidation-agent-frontend
+- ✅ README updated to "SolShield Frontend — DeveloperWeek 2026"
+- ✅ Next.js metadata/title updated to DeveloperWeek branding
+- ✅ Landing page content updated (no HackMoney language in current source)
+
+### C. Backend support repo (legacy repo name retained)
+- ✅ Repo: https://github.com/mgnlia/colosseum-agent-hackathon
+- ✅ README rebranded to DeveloperWeek 2026 submission support context
+- ℹ️ Repo name remains historical for continuity; submission-facing docs clarify this
+
+### Branding Audit Result
+- ✅ Submission-facing README copy normalized to DeveloperWeek 2026
+- ✅ Colosseum claim task remains parked and isolated from DevWeek materials
+
+---
+
+## 2) Devpost-Ready Materials (Copy / Screenshots / Video Script)
+
+## A. Devpost Description Copy (final)
 
 ### SolShield MCP Server — DeFi Monitoring Inside Your IDE
 
-**What it does:**
+**What it does:**  
 SolShield is an open-source Model Context Protocol (MCP) server that brings real-time DeFi lending position monitoring directly into your IDE through Kilo Code. Developers managing positions across Solana protocols — Kamino, MarginFi, and Solend — can check health factors, receive liquidation risk alerts, and execute protective rebalances without ever leaving their editor.
 
-**The problem:**
-DeFi developers and power users lose millions annually to liquidations. The core issue isn't lack of monitoring tools — it's context switching. When you're deep in a coding session, you don't check your DeFi dashboard. By the time you notice a position at risk, it may already be liquidated. We needed monitoring that lives where developers already work: their IDE.
+**The problem:**  
+DeFi developers and power users lose millions annually to liquidations. The core issue is context switching: when you're deep in code, you don't continuously monitor DeFi dashboards. By the time risk is noticed, liquidation may already occur.
 
-**How we built it:**
-We built SolShield as an MCP server in Python, exposing six tools (`check_health_factor`, `get_position_risk`, `list_positions`, `simulate_rebalance`, `execute_rebalance`, `set_alert_threshold`) that Kilo Code can call natively. The server connects to Solana via Helius RPC to fetch real-time position data from Kamino, MarginFi, and Solend. Risk analysis is powered by Claude (Anthropic), which evaluates positions with market context rather than simple threshold rules. When action is needed, rebalancing executes through Jupiter's swap aggregator for optimal routing.
+**How we built it:**  
+We implemented SolShield as an MCP server in Python, exposing six tools (`check_health_factor`, `get_position_risk`, `list_positions`, `simulate_rebalance`, `execute_rebalance`, `set_alert_threshold`) consumable natively by Kilo Code. The server retrieves position data for Kamino, MarginFi, and Solend via Solana RPC (Helius-compatible endpoints). Risk interpretation uses Claude for context-aware reasoning. Rebalance paths integrate with Jupiter routing for execution planning.
 
-The architecture follows MCP best practices: stdio transport for local use, typed tool schemas, structured error handling, and comprehensive logging. We used `uv` for dependency management and the official `mcp` Python SDK.
+The implementation follows MCP best practices: typed tool schemas, stdio transport, structured errors, and deterministic JSON responses.
 
-**What makes it unique:**
-Unlike browser-based DeFi dashboards, SolShield meets developers where they are. A simple natural language query to Kilo — "check my DeFi positions" — triggers real-time on-chain analysis. The AI doesn't just report numbers; it reasons about risk, suggests strategies, and can execute protective actions autonomously. It's the first MCP server purpose-built for DeFi position management.
+**What makes it unique:**  
+SolShield is purpose-built for developer workflow. Instead of a separate dashboard-first experience, risk monitoring is integrated into the coding loop via MCP. Natural-language prompts in Kilo trigger real on-chain analysis and actionable guidance.
 
-**What's next:**
-We plan to add support for EVM protocols (Aave, Compound), portfolio-level risk scoring across chains, and a community plugin marketplace for custom monitoring strategies. The MCP standard means any compatible AI coding agent — not just Kilo — can use SolShield.
+**What's next:**  
+Planned extensions include EVM protocol support (Aave/Compound), portfolio-level cross-chain risk scoring, and plugin-style strategy modules for custom policies.
 
 **Built with:** Python, MCP SDK, Anthropic Claude, Solana, Helius, Jupiter, Kilo Code
 
 ---
 
-## 🎬 Demo Video Script (3 minutes)
+## B. Screenshot Set (finalized list)
+
+> Note: Use this as the exact upload checklist in Devpost.
+
+1. **Architecture Diagram** — `assets/architecture.png`
+2. **Kilo MCP Configuration** — `assets/mcp-config.png`
+3. **Health Factor Query Result** — `assets/demo-health-check.png`
+4. **AI Risk Analysis Response** — `assets/demo-risk-analysis.png`
+5. **Rebalance Simulation/Execution Result** — `assets/demo-rebalance.png`
+6. **Frontend Landing Page** — `assets/frontend-landing.png`
+
+---
+
+## C. 3-Minute Demo Video Script (final)
 
 ### [0:00-0:20] Hook
-*Screen: VS Code with Kilo Code sidebar open*
-"What if your IDE could prevent you from losing thousands in DeFi liquidations? Meet SolShield — an MCP server that brings real-time DeFi monitoring directly into Kilo Code."
+"What if your IDE could help prevent DeFi liquidations while you code? This is SolShield, an MCP server integrated with Kilo Code for real-time position monitoring and risk analysis."
 
-### [0:20-0:50] Problem Statement
-*Screen: Split view — code editor on left, DeFi dashboard on right showing declining health factor*
-"DeFi developers manage lending positions across multiple protocols. But when you're deep in code, you don't check dashboards. Positions drift toward liquidation while you're focused on shipping features. Context switching kills — literally, it kills your collateral."
+### [0:20-0:50] Problem
+"Developers context-switch between code and DeFi dashboards. During volatile moves, that delay can cause liquidations. SolShield keeps monitoring in the same environment where developers already work."
 
-### [0:50-1:30] Demo — Setup & First Query
-*Screen: Terminal showing `uv sync` and MCP config*
-"Setup takes 30 seconds. Clone the repo, run `uv sync`, add the MCP config to Kilo. Done."
+### [0:50-1:25] Setup
+"Clone the repo, run `uv sync`, and add the SolShield MCP server config to Kilo. Once connected, Kilo can call SolShield tools directly."
 
-*Screen: VS Code with Kilo chat*
-"Now watch — I ask Kilo: 'Check the health factor for my wallet.' Kilo calls our `check_health_factor` MCP tool..."
+### [1:25-2:00] Health + Risk Analysis
+"Prompt: 'Check my DeFi positions.' Kilo calls `list_positions` and `check_health_factor` across Kamino, MarginFi, and Solend. Then prompt: 'Analyze risk on Kamino.' Kilo calls `get_position_risk`, returning context-aware AI guidance."
 
-*Screen: Kilo response showing positions across Kamino, MarginFi, Solend with health factors*
-"Instantly, I see all my positions across three protocols. My Kamino position is at 1.34 — that's in the warning zone."
+### [2:00-2:35] Simulation + Action
+"Prompt: 'Simulate rebalance with $200 collateral.' Kilo calls `simulate_rebalance` and shows projected health-factor improvement. If acceptable, proceed to `execute_rebalance` with explicit confirmation."
 
-### [1:30-2:10] Demo — AI Risk Analysis
-*Screen: Kilo chat continuing*
-"Let's go deeper: 'Analyze the risk on my Kamino position.' Kilo calls `get_position_risk`..."
-
-*Screen: Claude's analysis appearing in Kilo — market context, risk assessment, recommended action*
-"Claude doesn't just check a threshold. It analyzes current SOL volatility, historical liquidation patterns, and recommends adding $200 collateral to bring the health factor above 1.5. This is AI reasoning, not a dumb alert."
-
-### [2:10-2:40] Demo — Simulate & Execute
-*Screen: Kilo chat*
-"Before acting, I simulate: 'Simulate adding $200 USDC collateral to Kamino.' The MCP server shows me exactly what will happen — new health factor, gas costs, Jupiter swap route."
-
-*Screen: Simulation results in Kilo*
-"Looks good. 'Execute the rebalance.' The server routes through Jupiter, executes the swap, and my health factor jumps to 1.82. Liquidation prevented — and I never left my editor."
-
-### [2:40-3:00] Closing
-*Screen: Architecture diagram*
-"SolShield is open source, MIT licensed, and built on the MCP standard. It works with Kilo Code today and any MCP-compatible agent tomorrow. Stop losing money to liquidations. Start monitoring from where you already work."
-
-*Screen: GitHub URL + DeveloperWeek 2026 logo*
-"github.com/mgnlia/devweek-2026-submission — Star it, fork it, ship it."
+### [2:35-3:00] Close
+"SolShield is open-source, MCP-native, and built for DeveloperWeek 2026 Kilo tracks. It demonstrates practical, developer-first DeFi safety tooling inside the IDE."
 
 ---
 
-## 📸 Screenshot & Asset List
+## 3) Deployment Status + Live URL
 
-| Asset | Path | Description |
-|-------|------|-------------|
-| Architecture Diagram | `assets/architecture.png` | System architecture (MCP ↔ Kilo ↔ Solana) |
-| MCP Config Screenshot | `assets/mcp-config.png` | Kilo MCP settings JSON |
-| Health Check Demo | `assets/demo-health-check.png` | Kilo showing health factor query result |
-| Risk Analysis Demo | `assets/demo-risk-analysis.png` | Claude AI risk analysis in Kilo chat |
-| Rebalance Execution | `assets/demo-rebalance.png` | Successful rebalance execution |
-| Dashboard Overview | `assets/dashboard.png` | Web dashboard showing monitored positions |
+### Frontend deployment
+- ✅ Vercel project already configured
+- ✅ Repo source content is DeveloperWeek/SolShield branded
+- ⚠️ **Live URL currently serving stale old build**
 
-### Video Capture Plan
-1. **Tool**: OBS Studio or Loom
-2. **Resolution**: 1920x1080, 30fps
-3. **Audio**: Voiceover recorded separately, clean background
-4. **Editing**: Simple cuts, no fancy transitions. Add captions for tool calls.
-5. **Duration**: Target 2:50, hard cap 3:00
-6. **Upload**: Devpost video link (YouTube unlisted or Loom)
+**Configured URL:** https://liquidation-frontend.vercel.app
 
----
+### Required final deploy command (human/CI env with Vercel CLI auth)
+```bash
+cd liquidation-agent-frontend
+vercel --prod
+```
 
-## 🎯 Challenge Track Strategy
-
-### Primary: Kilo "For Devs, By Devs" ($4,000 pool)
-- **1st Place**: $1,500 cash + $1,500 Kilo Credits
-- **2nd Place**: $500 cash + $500 Kilo Credits
-- **Fit**: ★★★★★ — MCP server IS an open-source dev tool that improves Kilo
-- **Judging**: Utility, code quality, "would we actually use this?"
-
-### Secondary: Kilo "Finally Ship It" ($3,000 pool)
-- **1st Place**: $1,000 cash + $1,000 Kilo Credits
-- **Fit**: ★★★★ — We shipped a real tool using Kilo Code
-- **Note**: Can submit to BOTH Kilo tracks simultaneously
-
-### Tertiary: Overall Winner ($12,500 value)
-- **Prize**: Amazon Echos + DevNetwork passes + email blast (NOT cash)
-- **Judging**: Progress, Concept, Feasibility
-- **Fit**: ★★★★ — Strong concept with clear business viability
+After running deploy, verify the page hero contains:
+- "DeFi Risk Monitoring Inside Your IDE"
+- "DeveloperWeek 2026 Submission"
+- SolShield branded footer
 
 ---
 
-## ⚠️ Critical Notes
+## 4) Explicit Blocker List (Owner + Resolution Path)
 
-1. **Prize Reality**: Only ~$1,500-$2,000 in actual cash is achievable (Kilo tracks). Overall Winner prize is hardware + passes, not cash.
-2. **Kilo is NOT an extension platform**: We build an MCP server, not a "Kilo extension." Kilo supports MCP natively.
-3. **Rebrand is BLOCKING**: All repos must say "DeveloperWeek 2026" before submission. No "HackMoney" or "ETHDenver" or "Colosseum" branding.
-4. **Deadline**: February 20, 2026 @ 10:00am PST — no extensions.
+1. **Stale Vercel production deployment**
+   - **Owner:** Human operator with Vercel CLI/auth context (Henry/team)
+   - **Why blocked:** Current environment has no `vercel` executable/auth; cannot trigger prod redeploy from here
+   - **Resolution:** Run `vercel --prod` in `liquidation-agent-frontend`, then validate live content at configured URL
+
+2. **Devpost media upload execution (screenshots/video final export & upload)**
+   - **Owner:** Human submitter
+   - **Why blocked:** Requires manual recording/export/upload workflow and Devpost UI submission actions
+   - **Resolution:** Capture assets per checklist above, upload unlisted video link + screenshots + finalized copy
+
+3. **Colosseum claim verification**
+   - **Owner:** Human confirmation only
+   - **Status:** **Parked as human-blocked** per instruction
+   - **Resolution:** No action unless explicit human confirmation arrives
+
+---
+
+## Final Submit Decision
+
+✅ **SUBMIT** — package is complete from engineering side.  
+Only operational handoff steps remain (fresh Vercel prod redeploy verification + Devpost UI upload/submit).
