@@ -133,9 +133,10 @@ Kilo: [Calls check_health_factor] → "Kamino position: HF 1.34 (WARNING)
 
 ## 🔗 Links
 
-- **Demo**: [Live Dashboard](https://solshield-devweek.vercel.app)
-- **Backend Agent**: [colosseum-agent-hackathon](https://github.com/mgnlia/colosseum-agent-hackathon)
-- **Frontend**: [liquidation-agent-frontend](https://github.com/mgnlia/liquidation-agent-frontend)
+- **Frontend (Vercel):** https://liquidation-frontend.vercel.app
+- **Submission package + final handoff:** https://github.com/mgnlia/devweek-2026-submission/blob/main/SUBMISSION.md
+- **Backend Agent (support repo):** https://github.com/mgnlia/colosseum-agent-hackathon
+- **Frontend source repo:** https://github.com/mgnlia/liquidation-agent-frontend
 
 ## 📄 License
 
